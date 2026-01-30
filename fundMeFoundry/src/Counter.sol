@@ -4,20 +4,20 @@ pragma solidity ^0.8.13;
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 
 contract FundMe {
-    int256 public constant minimumAmountInUSD = 5;
-    address immutable public owner;
+    int256 public constant minimum_amount_in_USD = 5;
+    address immutable public I_OWNER;
     mapping(address wallet => int256 valueInUSD) fundings;
 
     AggregatorV3Interface public priceFeed;
 
     constructor(address _priceFeed){
-        owner = msg.sender;
+        I_OWNER = msg.sender;
         priceFeed = AggregatorV3Interface(_priceFeed);
     }
     
     function fund()public payable{
         require(msg.value >= getPrice(), "at least 5$ needs to be funded");
-        fundings[msg.sender] += msg.value;
+        fundings[msg.sender] ++;
     }
 
     function getPrice()public view returns(uint256){
