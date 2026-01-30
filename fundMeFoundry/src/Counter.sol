@@ -1,14 +1,16 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-contract Counter {
-    uint256 public number;
+import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
-    }
+contract FundMe {
+    address public owner;
+    mapping(string name => uint256 valueInDollar) fundings;
+    AggregatorV3Interface public priceFeed;
 
-    function increment() public {
-        number++;
+    constructor(address _priceFeed){
+        owner = msg.sender;
+        priceFeed = AggregatorV3Interface(_priceFeed);
     }
+    
 }
