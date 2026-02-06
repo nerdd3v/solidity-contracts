@@ -6,7 +6,7 @@ import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interf
 contract FundMe {
     int256 public constant minimum_amount_in_USD = 5;
     address immutable public I_OWNER;
-    mapping(address wallet => int256 valueInUSD) fundings;
+    mapping(address  => int256 ) fundings;
 
     AggregatorV3Interface public priceFeed;
 

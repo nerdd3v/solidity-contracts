@@ -1,9 +1,0 @@
-[submodule "fundMeFoundry/lib/forge-std"]
-	path = fundMeFoundry/lib/forge-std
-	url = https://github.com/foundry-rs/forge-std
-[submodule "lib/chainlink-brownie-contracts"]
-	path = lib/chainlink-brownie-contracts
-	url = https://github.com/smartcontractkit/chainlink-brownie-contracts
-[submodule "fundMeFoundry/lib/chainlink-brownie-contracts"]
-	path = fundMeFoundry/lib/chainlink-brownie-contracts
-	url = https://github.com/smartcontractkit/chainlink-brownie-contracts
